@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../interfaces/user';
+import { Status } from '../enums/enum';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,8 @@ export class UserService {
       age:22,
       email:'user@gmail.com',
       friend:true,
-      uid: 1
+      uid: 1,
+      status: "online"
     };
     let user2: User = {
       nick:'carl',
@@ -21,7 +23,8 @@ export class UserService {
       age:19,
       email:'carl@gmail.com',
       friend:true,
-      uid: 2
+      uid: 2,
+      status:"offline"
     };
     let user3: User = {
       nick:'Juan',
@@ -29,7 +32,8 @@ export class UserService {
       age:25,
       email:'juan@gmail.com',
       friend:false,
-      uid: 3
+      uid: 3,
+      status:"away"
     };
     let user4: User = {
       nick:'Ben',
@@ -37,7 +41,8 @@ export class UserService {
       age:19,
       email:'ben@gmail.com',
       friend:false,
-      uid: 4
+      uid: 4,
+      status: "busy"
     };
     let user5: User = {
       nick:'Jhon',
@@ -45,7 +50,8 @@ export class UserService {
       age:30,
       email:'carl@gmail.com',
       friend:true,
-      uid: 5
+      uid: 5,
+      status: "offline"
     };
     this.friends = [user1,user2,user3,user4,user5];
   }

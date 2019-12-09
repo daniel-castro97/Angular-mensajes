@@ -1,3 +1,4 @@
+
 export interface User{
     nick: String;
     subnick?: String;
@@ -5,4 +6,5 @@ export interface User{
     email:String;
     friend: boolean;
     uid: any;
+    status?:string
 }
