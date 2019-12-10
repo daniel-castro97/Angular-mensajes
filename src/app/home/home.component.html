@@ -1,11 +1,42 @@
-<input type="text" placeholder="Buscar Amigo" [(ngModel)]="query"/>
-<br>
-<b>Amigos</b>
-<ng-container *ngFor="let user of friends | search: query; let i = index">
-    <div >
-    <img src="../../assets/img/logo_live_{{user.status}}.png" alt="icon" id="icon_status" id="icono_status">
-    <a routerLink="/conversation/{{user.uid}}">
-        {{i+1}}. {{user.nick}} - {{user.email}}
-    </a>
+<div id="homeContainer">
+    <div class="box">
+        <div class="homeHeadContainer">
+            <div class="row">
+                <div class="col-md-auto">
+                    <div class="avatarFrameOnline">
+                        <img src="../../assets/img/generic_avatar.png" alt="icon-avatar c" id="homeAvatar">
+                    </div>
+                </div>
+                <div class="col">
+                    <b>Nombre</b>
+                    <div>
+                        <span>Status</span>
+                        <br/>
+                        <span>Escribe una descripción</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="boxPadding margen-t-15">
+        <div class="row">
+            <div class="col">
+                    <input type="text" class="form-control" placeholder="Buscar Amigo" [(ngModel)]="query"/>
+            </div>
+            <div class="col-md-auto">
+                <img src="../../assets/img/logo_live_add.png" class="icon" alt="icon-add">
+            </div>
+        </div>
+    </div>
+        
+        <hr/>
+        <b class="disblo">Amigos  ({{friends.length}}/{{friends.length}}) </b>
+        <div *ngFor="let user of friends | search: query; let i = index" class="disblo">
+            
+            <img src="../../assets/img/logo_live_{{user.status}}.png" alt="icon" id="icon_status" id="icono_status">
+            <a routerLink="/conversation/{{user.uid}}">
+                <b>{{user.nick}}</b> - {{user.email}}
+            </a>
+        </div>
 </div>
-</ng-container>
+
