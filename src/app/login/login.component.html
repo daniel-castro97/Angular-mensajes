@@ -19,13 +19,13 @@
                     No tienes cuenta? <a (click)="operation = 'register'">Registrate</a>
                 </p>
                 <div class="borderedContainer">
-                    <input class="form-control margen-t-15" type="email" placeholder="Email">
-                    <input class="form-control margen-t-15" type="password" placeholder="Contraseña">
-                    <input *ngIf="operation=='register'" class="form-control margen-t-15" type="text" placeholder="Nickname">
+                    <input [(ngModel)]="email" class="form-control margen-t-15" type="email" placeholder="Email">
+                    <input [(ngModel)]="password" class="form-control margen-t-15" type="password" placeholder="Contraseña">
+                    <input [(ngModel)]="nick" *ngIf="operation=='register'" class="form-control margen-t-15" type="text" placeholder="Nickname">
                 </div>
                 <div class="center margen-t-15">
-                    <a *ngIf="operation=='login'" class="btn btn-primary">Iniciar Sesion</a>
-                    <a *ngIf="operation=='register'" class="btn btn-primary">Registrarme</a>
+                    <a (click) = "login()" *ngIf="operation=='login'" class="btn btn-primary">Iniciar Sesion</a>
+                    <a (click) = "registro()" *ngIf="operation=='register'" class="btn btn-primary">Registrarme</a>
                 </div>
             </div>
         </div>

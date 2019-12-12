@@ -30,7 +30,7 @@
     </div>
         
         <hr/>
-        <b class="disblo">Amigos  ({{friends.length}}/{{friends.length}}) </b>
+        <b *ngIf="friends" class="disblo">Amigos  ({{friends.length}}/{{friends.length}}) </b>
         <div *ngFor="let user of friends | search: query; let i = index" class="disblo">
             
             <img src="../../assets/img/logo_live_{{user.status}}.png" alt="icon" id="icon_status" id="icono_status">
