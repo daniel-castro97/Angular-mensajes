@@ -16,10 +16,8 @@ export class AuthenticationGuard implements CanActivate, CanActivateChild, CanLo
     return this.authenticationService.getStatus().pipe(
       map(status => {
         if(status){
-          console.log(this.authenticationService.getStatus());
           return true;
-        }
-        else{
+        }else{
           return false;
         }
       })

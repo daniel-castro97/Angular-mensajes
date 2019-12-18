@@ -20,11 +20,11 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AuthenticationGuard } from './services/authentication.guard';
 
 const appRoutes : Routes = [
-      {path:'', component: HomeComponent },
+      {path:'', component: HomeComponent, canActivate: [AuthenticationGuard] },
       {path: 'home', component: HomeComponent,canActivate:[AuthenticationGuard]},
       {path: 'login', component: LoginComponent},
       {path: 'conversation/:uid', component: ConversationComponent},
-      {path: 'profile', component: ProfileComponent}
+      {path: 'profile', component: ProfileComponent, canActivate: [AuthenticationGuard] }
 ];
 
 @NgModule({
